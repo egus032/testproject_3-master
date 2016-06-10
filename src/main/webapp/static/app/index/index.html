@@ -1,3 +1,211 @@
+<!DOCTYPE HTML>
+<html class="index">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Призы всем!</title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href="static/css/style.css" rel="stylesheet" type="text/css">
+		<!--[if lte IE 8]><script type="text/javascript" src="js/html5support.js"></script><![endif]-->
+	</head>
+	<body>
+
+
+		<div class="wrapper">
+			
+
+
+			<div class="content">
+				<div class="container">
+
+					<div class="code-wrap">
+						<form class="code-form" action="">
+							<input type="text" placeholder="введи код с пачки">
+							<button type="submit">ОК</button>
+						</form>	
+					</div>
+
+
+					<ul class="steps">
+						<li class="item">
+							<img src="static/img/steps/1.png">
+							<div class="text">
+								<span class="counter">1</span>Покупай
+							</div>
+						</li>
+						<li class="item">
+							<img src="static/img/steps/2.png">
+							<div class="text">
+								<span class="counter">2</span>регистрируй
+							</div>
+						</li>
+						<li class="item">
+							<img src="static/img/steps/3.png">
+							<div class="text">
+								<span class="counter">3</span>выбирай
+							</div>
+						</li>
+						<li class="item">
+							<img src="static/img/steps/4.png">
+							<div class="text">
+								<span class="counter">4</span>получи
+							</div>
+						</li>
+					</ul>
+
+					<div class="picture-offer">
+						<a href="javascript: void(0);" class="btn">Узнать больше</a>
+					</div>
+
+
+					<div class="man">
+						
+						<marquee behavior="alternate" direction="left" bgcolor="#f00">
+							Воля
+					    </marquee>
+						<div class="helper"></div>
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<div class="footer-place"></div>
+		</div>
+
+
+		
+
+
+		<div class="modal modal-info" id="modal-info-money">
+			<div class="cell">
+				<p class="big">
+					Деньги на мобильный?!<br>
+					Без проблем!<br>
+					<span class="yellow">Ты выиграл 5 рублей.</span>
+				</p>
+				<p>
+					Заходи в личный кабинет, нажимай кнопку<br>
+					«Зачислить» и получай приз*
+				</p>
+				<p class="small">
+					*Деньги будут переведены на номер,<br>
+					который ты указал при регистрации
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow" onclick="closePopup('modal-info-money');">ok</span></div>
+			</div><span class="close" onclick="closePopup('modal-info-money');"></span>
+			<span class="close" onclick="closePopup('modal-info-money');"></span>
+		</div>
+
+		<div class="modal modal-info" id="modal-info-no-money">
+			<div class="cell">
+				<p class="big">
+					Время — деньги.
+				</p>
+				<p>
+					Твой код будет участовать<br>
+					в розыгрыше крутых призов!<br>
+					Результаты можешь посмотреть ХХ июля<br>
+					в личном кабинете или в разделе «Победители»
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow">Гарантированный<br>приз от партнеров</span></div>
+				<div class="btn-hold"><span class="btn bg-yellow">Участие<br>в розыгрыше призов</span></div>
+			</div>
+			<span class="close" onclick="closePopup('modal-info-no-money');"></span>
+		</div>
+
+
+
+		<div class="modal modal-info" id="modal-info-drawing">
+			<div class="cell">
+				<p class="big">
+					Ты выбрал розыгрыш!
+				</p>
+				<p>
+					Сегодня денежные призы закончились. <br>
+					Но это не проблема — деньги появятся завтра.<br>
+					Приходи и используй свой код! <br>
+					А если не хочешь ждать, обменяй<br>
+					код сейчас на:
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow" onclick="closePopup('modal-info-drawing');">ok</span></div>
+			</div>
+			<span class="close" onclick="closePopup('modal-info-drawing');"></span>
+		</div>
+
+
+		<div class="modal modal-info" id="modal-info-wrong-again">
+			<div class="cell">
+				<p class="big">
+					Код неверный!
+				</p>
+				<p>
+					Такого кода нет в нашей базе.<br>
+					Давай разберемся вместе — напиши нам<br>
+					в форме обратной связи<br>
+					или попробуй ввести код еще раз.
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow">еще раз</span></div>
+				<div class="btn-hold"><span class="btn bg-yellow">Обратная связь</span></div>
+			</div>
+			<span class="close" onclick="closePopup('modal-info-wrong-again');"></span>
+		</div>
+
+
+		<div class="modal modal-info" id="modal-info-wrong">
+			<div class="cell">
+				<p class="big">
+					Код неверный!
+				</p>
+				<p>
+					Такого кода нет в нашей базе.<br>
+					Попробуй ввести код снова.
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow">еще раз</span></div>
+			</div>
+			<span class="close" onclick="closePopup('modal-info-wrong');"></span>
+		</div>
+		
+		<div class="modal modal-info show" id="modal-info-choise">
+			<div class="cell">
+				<p class="big">
+					Всё супер — твой код принят!<br><br>
+					<span class="yellow normal-case">Обменяй свой код на...</span>
+				</p>
+				<p>
+					<img class="picture" src="static/img/popup-choise-bg.png">
+				</p>
+				<div class="btn-hold"><span class="btn bg-yellow">деньги<br>на мобильный</span></div>
+				<div class="btn-hold right"><span class="btn bg-yellow">Участие<br>в розыгрыше призов</span></div>
+				<br>
+				<span class="quazi-link" onclick="closePopup('modal-info-choise');">Выберу потом</span>
+			</div>
+			<span class="close" onclick="closePopup('modal-info-choise');"></span>
+		</div>
+
+		<div class="fader"></div>
+
+
+		<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.main.js"></script>
+		<script type="text/javascript" src="static/js/jcf.js"></script>
+		<script type="text/javascript" src="static/js/jcf.select.js"></script>
+		<script type="text/javascript" src="static/js/jcf.main.js"></script>
+
+		<script type="text/javascript" src="static/js/main.js"></script>
+
+
+
+	</body>
+</html>
+
+
+
+
+
+
+<!--
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -36,3 +244,4 @@
 		</ul>
 	</div>
 </div>
+-->
