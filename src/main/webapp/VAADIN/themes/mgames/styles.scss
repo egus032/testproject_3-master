@@ -1,0 +1,7 @@
+@import "mgames.scss";
+@import "addons.scss";
+
+.mgames {
+    @include addons;
+    @include mgames;
+}

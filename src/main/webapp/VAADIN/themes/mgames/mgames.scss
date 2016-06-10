@@ -1,0 +1,170 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+$v-font-size: 16px;
+$v-font-weight: 300;
+
+$v-font-family: "Open Sans", sans-serif;
+$v-app-loading-text: "MSocial Backoffice";
+
+// Margins
+$v-layout-margin-top: 10px;
+$v-layout-margin-bottom: 10px;
+$v-layout-margin-right: 10px;
+$v-layout-margin-left: 10px;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+$valo-menu-background-color: #414B56;
+
+@import "../valo/valo.scss";
+
+@mixin mgames {
+    @include valo;
+
+    .valo-menu {
+        border-right: none;
+
+        .badgewrapper {
+            position: relative;
+            padding: 0 !important;
+        }
+    }
+
+    .valo-menu-item {
+        overflow: hidden;
+    }
+
+    .v-ui[width-range~="0-800px"] {
+        .valo-menu-title {
+            @include valo-gradient($color: $valo-menu-background-color);
+            border-bottom-color: first-color(valo-border($color: $valo-menu-background-color));
+        }
+        .valo-menu .v-menubar-user-menu {
+            color: inherit;
+        }
+    }
+
+    .v-ui[width-range~="801px-"] {
+        .valo-menu {
+            @include animation(valo-animate-in-slide-right 700ms 0ms backwards);
+        }
+
+        .valo-menu-title {
+            background: transparent;
+            @include box-shadow(none);
+            border-bottom: none;
+        }
+    }
+
+    .valo-menu-title {
+        line-height: 1.2;
+    }
+
+    .v-menubar-user-menu:after {
+        display: none;
+    }
+
+
+    //color: #9CA5AF;
+    .v-menubar-user-menu > .v-menubar-menuitem {
+        display: block;
+        padding: 0;
+        max-width: 90%;
+        margin: 0 auto;
+
+        .v-menubar-menuitem-caption:after {
+            margin-right: -1em;
+        }
+
+        img.v-icon {
+            @if is-dark-color($valo-menu-background-color) {
+                border: none;
+            }
+        }
+    }
+
+    .v-ui[width-range~="0-800px"] {
+        .v-menubar-user-menu > .v-menubar-menuitem {
+            max-width: none;
+            margin-right: .5em;
+
+            .v-menubar-menuitem-caption:after {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+	.v-table [class*="-row"].v-table-row-red {
+		background-color: rgba(237, 71, 59, 0.2);
+		color: rgb(19, 13, 7);
+	}
+
+	.v-table .v-table-row-odd.v-table-row-red {
+		background-color: rgba(197, 31, 19, 0.2);
+	}
+
+	.v-table [class*="-row"].v-selected.v-table-row-red {
+		@include background-image( linear-gradient(to bottom,rgba(237, 71, 59, 1) 2%, rgba(212, 66, 45, 1) 98%) );
+		color: #ecf2f8;
+	}
+
+	.v-table [class*="-row"].v-selected.v-table-row-red .v-table-cell-content {
+		border-color: transparent;
+		border-left-color: rgb(235, 91, 106);
+	}
+
+	.v-table [class*="-row"].v-table-focus.v-table-row-red {
+		outline-color: rgb(235, 91, 106);
+	}
+
+
+	.v-table [class*="-row"].v-table-row-green {
+		background-color: rgba(71, 237, 59, 0.2);
+		color: rgb(19, 13, 7);
+	}
+
+	.v-table .v-table-row-odd.v-table-row-green {
+		background-color: rgba(31, 197, 19, 0.2);
+	}
+
+	.v-table [class*="-row"].v-selected.v-table-row-green {
+		@include background-image( linear-gradient(to bottom,rgba(71, 180, 59, 1) 2%, rgba(66, 155, 45, 1) 98%) );
+		color: #ecf2f8;
+	}
+
+	.v-table [class*="-row"].v-selected.v-table-row-green .v-table-cell-content {
+		border-color: transparent;
+		border-left-color: rgb(69, 200, 106);
+	}
+
+	.v-table [class*="-row"].v-table-focus.v-table-row-green {
+		outline-color: rgb(69, 200, 106);
+	}
+
+
+	.v-table [class*="-row"].v-selected a{
+		color: #ecf2f8;
+	}
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Призы всем!</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 8]><script type="text/javascript" src="js/html5support.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper cont-wid4">
+  
+  <div class="content">
+    <div class="block-bg"></div>
+    <div class="container">
+        <div data-ng-show="user" class="row">
+		<div class="col-md-12">
+			<pre data-ng-bind="user | json"></pre>
+		</div>
+		<div class="col-md-12 text-center">
+			<button data-sign-out-btn class="btn btn-danger btn-lg">Выход</button>
+		</div>
+	</div>
+      
+      <div class="block ind3" data-ng-show="!user">
+        <div class="form2 reg auth" data-ng-controller="SignInCtrl">
+          <form data-ng-submit="submit()" name="form" novalidate>
+            <h1>авторизация</h1>
+            <div class="social big">Используй аккаунт в социальной сети для входа на сайт
+              <div class="ind"><a class="link vk" href="#">Вконтакте</a> <a class="link od" href="#">Одноклассники</a> <a class="link fb" href="#">Facebook</a></div>
+            </div>
+            <!-- end .social-->
+            <div class="row">
+              <div class="label">
+                <div class="cell">E-mail:</div>
+              </div>
+              <!-- end .label-->
+              <div class="input-hold" data-ng-class="{'has-error':form.$submitted && form.email.$invalid}">
+                <input data-ng-model="master.email" data-ng-pattern="patterns.email"
+						   required="" 
+						   type="text" name="email" class="form-control">
+              </div>
+              <!-- end .input-hold-->
+              <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+              <!-- end .err-text--> 
+            </div>
+            <!-- end .row-->
+            <div class="row error">
+              <div class="label">
+                <div class="cell">Пароль: </div>
+              </div>
+              <!-- end .label-->
+              <div data-ng-class="{'has-error':form.$submitted && form.password.$invalid}" class="input-hold">
+                <input data-ng-model="master.password" data-ng-minlength="3" 
+						   required=""
+						   type="password" name="password" class="form-control">
+              </div>
+              <!-- end .input-hold-->
+              <div class="err-text">Не все поля заполнены!</div>
+              <!-- end .err-text--> 
+            </div>
+            <!-- end .row-->
+            <div class="link-hold"><a href="#">Я еще не регистрировался</a></div>
+            <!-- end .link-hold-->
+            <div class="submit">
+              <input class="btn" value="ок" type="submit">
+            </div>
+            <!-- end .submit-->
+            <div class="link-hold"><a href="#">Забыл пароль?</a></div>
+            <!-- end .link-hold-->
+          </form>
+        </div>
+        <!-- end .reg--> 
+      </div>
+      <!-- end .block--> 
+    </div>
+    <!-- end .container-->
+    <div class="code">
+      <form>
+        <input class="btn" value="ОК" type="submit">
+        <div class="nofloat">
+          <input class="placeholder" value="введи код с пачки" type="text">
+        </div>
+      </form>
+    </div>
+    <!-- end .code--> 
+  </div>
+  <!-- end .content-->
+  <div class="footer-place"></div>
+</div>
+<!-- end .wrapper-->
+
+
+
+<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.main.js"></script>
+<script type="text/javascript" src="static/js/jcf.js"></script>
+<script type="text/javascript" src="static/js/jcf.select.js"></script>
+<script type="text/javascript" src="static/js/jcf.main.js"></script>
+
+<script type="text/javascript" src="static/js/main.js"></script>
+
+</body>
+</html>

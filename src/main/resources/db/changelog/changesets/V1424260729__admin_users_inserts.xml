@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+    <changeSet id="V1424260729__admin_users_inserts" author="Constantine Tretyak">
+        <validCheckSum>7:a0e30a7f65e432ee8f2068d7b758c08c</validCheckSum>
+        <validCheckSum>7:826d8841fd0be246bd68da35b14128f3</validCheckSum>
+        <insert tableName="admin_users">
+
+            <column name="login" value="admin"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="0"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="admin2"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="0"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="admin3"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="0"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="admin4"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="0"></column>
+
+        </insert>
+
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator2"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator3"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator4"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator5"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator6"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator7"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator8"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator9"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator10"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator11"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator12"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator13"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator14"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator15"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator16"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator17"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator18"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator19"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="moderator20"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="2"></column>
+
+        </insert>
+
+        <insert tableName="admin_users">
+
+            <column name="login" value="dev"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="1"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="dev2"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="1"></column>
+
+        </insert>
+        <insert tableName="admin_users">
+
+            <column name="login" value="dev3"></column>
+
+            <column name="password" valueComputed="${password}"></column>
+
+            <column name="role" value="1"></column>
+
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>

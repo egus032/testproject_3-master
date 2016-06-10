@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="V1424268023__logging_event" author="Constantine Tretyak">
+
+        <createTable tableName="logging_event">
+
+            <column name="timestmp" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="formatted_message" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="logger_name" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="level_string" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="thread_name" type="varchar(254)">
+            </column>
+
+            <column name="reference_flag" type="smallint">
+            </column>
+
+            <column name="arg0" type="varchar(254)">
+            </column>
+
+            <column name="arg1" type="varchar(254)">
+            </column>
+
+            <column name="arg2" type="varchar(254)">
+            </column>
+
+            <column name="arg3" type="varchar(254)">
+            </column>
+
+            <column name="caller_filename" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="caller_class" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="caller_method" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="caller_line" type="char(4)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="event_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

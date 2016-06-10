@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="V1424267687__newsletters_pictures" author="Constantine Tretyak">
+
+        <createTable tableName="newsletters_pictures">
+
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="filename" type="text">
+            </column>
+
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="newsletter_id" type="int">
+            </column>
+
+        </createTable>
+        
+        <addForeignKeyConstraint baseTableName="newsletters_pictures"
+                                 baseColumnNames="newsletter_id"
+                                 constraintName="newsletters_pictures_newsletter_id_fkey"
+                                 referencedTableName="newsletters"
+                                 referencedColumnNames="id"
+                                 onUpdate="CASCADE"
+                                 onDelete="CASCADE"/>
+
+    </changeSet>
+
+</databaseChangeLog>

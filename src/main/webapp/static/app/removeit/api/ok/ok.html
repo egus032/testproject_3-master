@@ -1,0 +1,30 @@
+<div class="jumbotron" style="margin-top: -4px">
+	<div class="container">
+		<h2>VK api <small>запросы к методам API</small></h2>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form data-ng-submit="js()" name="form" novalidate="">
+				<div class="form-group" data-ng-class="{'has-error': form.$submitted && form.method.$invalid}">
+					<label>Метод</label>
+					<input data-ng-model="master.method" 
+						   required=""
+						   name="method" class="form-control" placeholder="users.get">
+				</div>
+				<div class="form-group" data-ng-class="{'has-error': form.$submitted && form.params.$invalid}">
+					<label>Параметры</label>
+					<textarea data-ng-model="master.params"
+							  required=""
+							  name="params" class="form-control" rows="7" placeholder="{}"></textarea>
+				</div>
+				<button data-ng-click="oauth2()" class="btn btn-primary ok">OAuth2</button>
+				<a class="btn" href="http://apiok.ru/wiki/pages/viewpage.action?pageId=46137373" target="_blank">Методы</a>
+			</form>
+		</div>
+	</div>
+</div>
+<div data-mg-popup="responsePopup">
+	<textarea data-ng-model="response" class="form-control" style="height: 450px;margin-top: 5%;width: 100%;border: initial;" disabled=""></textarea>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoding>cp1251</encoding>
+        <target>System.out</target>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n%ex{full}</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>cp1251</encoding>
+        <file>${catalina.base}/logs/testproject.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n%ex{full}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/testproject_%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    
+    <appender name="db" class="ch.qos.logback.classic.db.DBAppender">
+        <encoding>cp1251</encoding>
+        <connectionSource class="ch.qos.logback.core.db.JNDIConnectionSource">
+            <!-- please note the "java:comp/env/" prefix -->
+            <jndiLocation>java:comp/env/${datasource}</jndiLocation>
+        </connectionSource>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+    
+    <root level="info">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="db" />
+    </root>
+    
+</configuration>

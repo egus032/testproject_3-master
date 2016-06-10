@@ -1,0 +1,73 @@
+<!--
+<div class="jumbotron" style="margin-top: -4px">
+	<div class="container">
+		<h2>Email <small>регистрация и авторизация через логин и пароль</small></h2>
+	</div>
+</div>
+<div class="container">
+	<div data-ng-show="!user" class="row">
+		<div class="col-md-6" data-ng-controller="SignInCtrl">
+			<h3>Авторизация</h3>
+			<form data-ng-submit="submit()"
+				  name="form" novalidate>
+				<div data-ng-class="{'has-error':form.$submitted && form.email.$invalid}" class="form-group">
+					<label>E-mail</label>
+					<input data-ng-model="master.email" 
+						   data-ng-pattern="patterns.email"
+						   required="" 
+						   type="text" name="email" class="form-control">
+				</div>
+				<div data-ng-class="{'has-error':form.$submitted && form.password.$invalid}" class="form-group">
+					<label>Пароль</label>
+					<input data-ng-model="master.password" 
+						   data-ng-minlength="3" 
+						   required=""
+						   type="password" name="password" class="form-control">
+				</div>
+				<div class="checkbox">
+					<label>
+						<input data-ng-init="master.autologin = true" data-ng-model="master.autologin" type="checkbox"> Запомнить
+					</label>
+				</div>
+				<button type="submit" class="btn btn-default">Войти</button>
+			</form>
+		</div>
+		<div class="col-md-6" data-ng-controller="SignUpCtrl">
+			<h3>Регистрация</h3>
+			<form data-ng-submit="submit()" name="form" novalidate>
+				<input data-ng-init="master.autologin = true" data-ng-model="master.autologin" type="hidden">
+				<div data-ng-class="{'has-error': form.$submitted && form.email.$invalid}" class="form-group">
+					<label>E-mail</label>
+					<input data-ng-model="master.email" 
+						   data-ng-pattern="patterns.email"
+						   required="" 
+						   type="text" name="email" class="form-control">
+				</div>
+				<div data-ng-class="{'has-error': form.$submitted && form.password.$invalid}" class="form-group">
+					<label>Пароль</label>
+					<input data-ng-model="master.password" 
+						   data-ng-minlength="3" 
+						   required="" 
+						   type="password" name="password" class="form-control">
+				</div>
+				<div data-ng-class="{'has-error': form.$submitted && form.repeatPassword.$invalid}" class="form-group">
+					<label>Повтор пароля</label>
+					<input data-ng-model="master.repeatPassword"
+						   data-mg-repeat-field="master.password"
+						   required="" 
+						   type="password" name="repeatPassword" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-default">Зарегистрироваться</button>
+			</form>
+		</div>
+	</div>
+	<div data-ng-show="user" class="row">
+		<div class="col-md-12">
+			<pre data-ng-bind="user | json"></pre>
+		</div>
+		<div class="col-md-12 text-center">
+			<button data-sign-out-btn class="btn btn-danger btn-lg">Выход</button>
+		</div>
+	</div>
+</div>
+-->

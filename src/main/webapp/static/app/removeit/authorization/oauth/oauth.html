@@ -1,0 +1,28 @@
+<div class="jumbotron" style="margin-top: -4px">
+	<div class="container">
+		<h2>OAuth <small>открытый протокол <a href="https://ru.wikipedia.org/wiki/OAuth" target="_blank">авторизации</a></small></h2>
+		<p><a href="https://vk.com/dev/auth_sites" target="_blank">VK OAuth2</a>,
+			<a href="https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow" target="_blank">Facebook OAuth2</a>,
+			<a href="https://apiok.ru/wiki/pages/viewpage.action?pageId=81822109" target="_blank">Одноклассники OAuth2</a>
+		</p>
+	</div>
+</div>
+<div class="container">
+	<div data-ng-show="!user" class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="btn-group-vertical btn-block">
+				<button data-sign-vk-oauth2-btn class="btn btn-primary btn-lg vk">ВКонтакте</button>
+				<button data-sign-fb-oauth2-btn class="btn btn-default btn-lg facebook">Facebook</button>
+				<button data-sign-ok-oauth2-btn class="btn btn-default btn-lg ok">Одноклассники</button>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="user" class="row">
+		<div class="col-md-12">
+			<pre data-ng-bind="user | json"></pre>
+		</div>
+		<div class="col-md-12 text-center">
+			<button data-sign-out-btn class="btn btn-danger btn-lg">Выход</button>
+		</div>
+	</div>
+</div>

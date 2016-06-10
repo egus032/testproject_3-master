@@ -1,0 +1,41 @@
+<div class="jumbotron" style="margin-top: -4px">
+	<div class="container">
+		<h2>Share <small>поделиться в социальной сети без авторизации</small></h2>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<form name="form" novalidate="">
+				<div class="form-group">
+					<label>URL</label>
+					<input data-ng-model="master.url" class="form-control" placeholder="users.get">
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label>Заголовок</label>
+						<input data-ng-model="master.title" class="form-control" placeholder="users.get">
+					</div>
+					<div class="form-group col-md-6">
+						<label>Описание</label>
+						<input data-ng-model="master.description" class="form-control" placeholder="users.get">
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Изображение</label>
+					<input data-ng-model="master.image" class="form-control" placeholder="users.get">
+					<img data-ng-src="{{master.image}}" style="max-height: 77px"/>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-primary clearfix vk" data-mg-vk-share="master">Вконтакте</button>
+					<button class="btn btn-primary clearfix facebook" data-mg-facebook-share="master">Facebook</button>
+					<button class="btn btn-warning clearfix ok" data-mg-ok-share="master">Одноклассники</button>
+					<button class="btn btn-primary clearfix twitter" data-mg-twitter-share="master">Twitter</button>
+					<button class="btn btn-primary clearfix mail-ru" data-mg-mail-ru-share="master">Мой мир</button>
+					<button class="btn btn-danger clearfix google-plus" data-mg-google-plus-share="master">Google+</button>
+					<button class="btn btn-primary clearfix linked-in" data-mg-linked-in-share="master">LinkedIn</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

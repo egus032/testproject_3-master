@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="V1424260550__users" author="Constantine Tretyak">
+
+        <createTable tableName="users">
+
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="social_id" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="fname" type="text"></column>
+
+            <column name="lname" type="text"></column>
+            
+            <column name="sex" type="int" defaultValue="0"></column>
+
+            <column name="photo" type="text"></column>
+
+            <column name="bdate" type="timestamp"></column>
+
+            <column name="last_visit" type="timestamp" defaultValue="now()"></column>
+
+            <column name="reg_date" type="timestamp" defaultValue="now()"></column>
+
+        </createTable>
+
+        <createIndex tableName="users" indexName="users_social_id_idx">
+            <column name="social_id" type="text"/>
+        </createIndex>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,89 @@
+<style>
+	.cropper {text-align: center;}
+	.cropper input[type="file"] {display: inline-block; margin: 20px 0 50px;}
+	#crop-container {display: inline-block; height: 600px; width: 600px;}
+	#getCroppedCanvasModal  canvas {max-width: 100%;}
+</style>
+<div class="cropper">
+	<div id="crop-container">
+		<img id="image" src="http://www.europaplus.ru/images/content4/site_1/2014/01/emma%20%284%29.jpg">
+	</div>
+
+	<div class="col-md-12 docs-buttons">
+		
+		<input type="file" id="inputImage"><br>
+
+		<div class="btn-group">
+			<button title="Zoom In" data-option="0.1" data-method="zoom" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('zoom', 0.1)">
+					Zoom In
+				</span>
+			</button>
+			<button title="Zoom Out" data-option="-0.1" data-method="zoom" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('zoom', -0.1)">
+					Zoom Out
+				</span>
+			</button>
+		</div>
+
+		<div class="btn-group">
+			<button title="Move Left" data-second-option="0" data-option="-10" data-method="move" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('move', -10, 0)">
+					Move Left
+				</span>
+			</button>
+			<button title="Move Right" data-second-option="0" data-option="10" data-method="move" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('move', 10, 0)">
+					Move Right
+				</span>
+			</button>
+			<button title="Move Up" data-second-option="-10" data-option="0" data-method="move" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('move', 0, -10)">
+					Move Up
+				</span>
+			</button>
+			<button title="Move Down" data-second-option="10" data-option="0" data-method="move" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('move', 0, 10)">
+					Move Down
+				</span>
+			</button>
+		</div>
+
+		<div class="btn-group">
+			<button title="Rotate Left" data-option="-45" data-method="rotate" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('rotate', -45)">
+					Rotate Left
+				</span>
+			</button>
+			<button title="Rotate Right" data-option="45" data-method="rotate" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('rotate', 45)">
+					<span class="fa fa-rotate-right">Rotate Right</span>
+				</span>
+			</button>
+		</div>
+
+
+
+		<div class="btn-group btn-group-crop">
+			<button data-method="getCroppedCanvas" class="btn btn-primary" type="button">
+				<span title="" class="docs-tooltip" data-original-title="$().cropper('getCroppedCanvas')">
+					Обрезать
+				</span>
+			</button>
+		</div>
+
+		<!--custom popup for cropped img-->
+		<div tabindex="-1" role="dialog" aria-labelledby="getCroppedCanvasTitle" aria-hidden="true" id="getCroppedCanvasModal" class="modal fade docs-cropped">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+						<h4 id="getCroppedCanvasTitle" class="modal-title">Cropped</h4>
+					</div>
+					<div class="modal-body"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

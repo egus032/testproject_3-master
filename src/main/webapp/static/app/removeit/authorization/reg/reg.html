@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Призы всем!</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 8]><script type="text/javascript" src="js/html5support.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper cont-wid2">
+  
+  <div class="content">
+    <div class="block-bg"></div>
+    <div class="container">
+      <div data-ng-show="user" class="row">
+		<div class="col-md-12">
+			<pre data-ng-bind="user | json"></pre>
+		</div>
+		<div class="col-md-12 text-center">
+			<button data-sign-out-btn class="btn btn-danger btn-lg">Выход</button>
+		</div>
+	</div>
+        
+      <div class="block ind3" data-ng-show="!user">
+        <div class="form2 reg" data-ng-controller="SignUpCtrl">
+          <form data-ng-submit="submit()" name="form" novalidate>
+            <h1>Регистрация</h1>
+            <div class="err-info">Введеные данные уже существуют. Если ты участвовал в других акциях компании  PepsiCo, то можешь использовать прежний логин и пароль для авторизации на сайт. Если необходимо восстановить пароль, воспользуйся формой восстановления пароля.</div>
+            <!-- end .err-info-->
+            <div class="social">Зарегистрируйся на сайте через социальную сеть <a class="link vk" href="#">Вконтакте</a> <a class="link od" href="#">Одноклассники</a> <a class="link fb" href="#">Facebook</a></div>
+            <!-- end .social-->
+            <div class="clearfix">
+              <div class="side l">
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Фамилия*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input type="text" name="lname" required="" data-ng-model="master.lname">
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Имя*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input type="text" name="fname" required="" data-ng-model="master.fname">
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Отчество</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                    <input type="text" name="sname" required="" data-ng-model="master.sname">
+                  </div>
+                  <!-- end .input-hold--> 
+                </div>
+                <!-- end .row-->
+                <div class="row error">
+                  <div class="label">
+                    <div class="cell">E-mail*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold" data-ng-class="{'has-error': form.$submitted && form.email.$invalid}">
+                    <input value="example@example.ru" data-ng-model="master.email" 
+						   data-ng-pattern="patterns.email"
+						   required="" 
+						   type="text" name="email" class="form-control">
+                    <div class="pic-info"></div>
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Телефон*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input class="mask-phone" value="+7 (___) ___-__-__" type="text" name="phone" 
+                             required="" data-ng-model="master.phone">
+                    <div class="pic-info"></div>
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Повтори<br>
+                      телефон*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input class="mask-phone" value="+7 (___) ___-__-__" type="text" name="repeatPhone"
+                             required="" data-ng-model="master.repeatPhone">
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Пароль*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div data-ng-class="{'has-error': form.$submitted && form.password.$invalid}" class="input-hold">
+                    <input data-ng-model="master.password" 
+						   data-ng-minlength="3" 
+						   required="" 
+						   type="password" name="password" class="form-control">
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Повтори<br>
+                      пароль*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div data-ng-class="{'has-error': form.$submitted && form.repeatPassword.$invalid}" class="input-hold">
+                    <input data-ng-model="master.repeatPassword"
+						   data-mg-repeat-field="master.password"
+						   required="" 
+						   type="password" name="repeatPassword" class="form-control">
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row--> 
+              </div>
+              <!-- end .side-->
+              <div class="side r">
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Дата рождения*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input class="mask-date" value="дд.мм.гггг" type="text" name="bdate" data-ng-model="master.bdate">
+                    <div class="pic-cal"></div>
+                  </div>
+                  <!-- end .input-hold-->
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Пол*</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="cell">
+                    <div class="checks">
+                      <label>
+                        <input type="radio" name="gender" class="outtaHere">
+                        <span class="radio"></span> М</label>
+                      <label>
+                        <input type="radio" name="gender" class="outtaHere">
+                        <span class="radio"></span> Ж</label>
+                    </div>
+                    <!-- end .checks--> 
+                  </div>
+                  <div class="err-text">Этот E-mail уже был зарегистрирован</div>
+                  <!-- end .err-text--> 
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Регион</div>
+                  </div>
+                  <!-- end .label-->
+                  <select name="region" data-ng-model="master.region">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                  </select>
+                </div>
+                <!-- end .row-->
+                <div class="row">
+                  <div class="label">
+                    <div class="cell">Город</div>
+                  </div>
+                  <!-- end .label-->
+                  <div class="input-hold">
+                      <input type="text" name="city" required="" data-ng-model="master.city">
+                  </div>
+                  <!-- end .input-hold--> 
+                </div>
+                <!-- end .row-->
+                <div class="row noind">
+                  <div class="check">
+                    <label>
+                      <input type="checkbox" class="outtaHere">
+                      <span class="checkbox"></span> Я подтверждаю, что мне исполнилось 18&nbsp;лет на момент участия в Акции</label>
+                  </div>
+                  <!-- end .check--> 
+                </div>
+                <!-- end .row-->
+                <div class="row noind">
+                  <div class="check">
+                    <label>
+                      <input type="checkbox" class="outtaHere">
+                      <span class="checkbox"></span> Я согласен с <a href="#">правилами</a> участия в акции</label>
+                  </div>
+                  <!-- end .check--> 
+                </div>
+                <!-- end .row-->
+                <div class="row noind">
+                  <div class="check">
+                    <label>
+                      <input type="checkbox" class="outtaHere">
+                      <span class="checkbox"></span> Я согласен с <a href="#">пользовательским соглашением</a></label>
+                  </div>
+                  <!-- end .check--> 
+                </div>
+                <!-- end .row-->
+                <div class="row noind">
+                  <div class="cell">* Заполнить обязательно</div>
+                </div>
+                <!-- end .row--> 
+              </div>
+              <!-- end .side--> 
+            </div>
+            <div class="captcha"><img src="static/img/temp/captcha.jpg" width="398" height="98" alt=""/></div>
+            <!-- end .captcha-->
+            <div class="submit">
+              <input class="btn" value="зарегистрироваться" type="submit">
+            </div>
+            <!-- end .submit-->
+          </form>
+        </div>
+        <!-- end .reg--> 
+      </div>
+      <!-- end .block--> 
+    </div>
+    <!-- end .container-->
+    <div class="code">
+      <form>
+        <input class="btn" value="ОК" type="submit">
+        <div class="nofloat">
+          <input class="placeholder" value="введи код с пачки" type="text">
+        </div>
+      </form>
+    </div>
+    <!-- end .code--> 
+  </div>
+  <!-- end .content-->
+  <div class="footer-place"></div>
+</div>
+<!-- end .wrapper-->
+<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.main.js"></script>
+<script type="text/javascript" src="static/js/jcf.js"></script>
+<script type="text/javascript" src="static/js/jcf.select.js"></script>
+<script type="text/javascript" src="static/js/jcf.main.js"></script>
+
+<script type="text/javascript" src="static/js/main.js"></script>
+
+</body>
+</html>

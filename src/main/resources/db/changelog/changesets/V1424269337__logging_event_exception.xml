@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="V1424269337__logging_event_exception" author="Constantine Tretyak">
+
+        <createTable tableName="logging_event_exception">
+
+            <column name="event_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="logging_event_exception_event_id_fkey" references="logging_event(event_id)"/>
+            </column>
+
+            <column name="i" type="smallint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="trace_line" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+        
+        <addPrimaryKey tableName="logging_event_exception" columnNames="event_id,i"/>
+
+    </changeSet>
+
+</databaseChangeLog>

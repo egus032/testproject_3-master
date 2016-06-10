@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="V1452524497__users_autologin" author="Constantine Tretyak">
+
+		<createTable tableName="users_autologin">
+
+			<column name="user_id" type="integer">
+				<constraints primaryKey="true"/>
+			</column>
+
+			<column name="key" type="text">
+				<constraints nullable="false"/>
+			</column>
+
+			<column name="expired" type="timestamp without time zone">
+				<constraints nullable="false"/>
+			</column>
+
+		</createTable>
+
+		<addForeignKeyConstraint baseTableName="users_autologin" baseColumnNames="user_id"
+								 constraintName="users_autologin_user_id_fkey"
+								 referencedTableName="users" referencedColumnNames="id"
+								 onDelete="CASCADE"
+								 onUpdate="CASCADE"/>
+
+	</changeSet>
+
+</databaseChangeLog>

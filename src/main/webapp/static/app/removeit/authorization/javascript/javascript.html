@@ -1,0 +1,26 @@
+<div class="jumbotron" style="margin-top: -4px">
+	<div class="container">
+		<h2>OpenApi <small>авторизация через Javascript API соц. сетей</small></h2>
+		<p><a href="https://vk.com/dev/Javascript_SDK" target="_blank">VK Javascript SDK</a>,
+			<a href="https://developers.facebook.com/docs/javascript" target="_blank">Facebook Javascript SDK</a>
+		</p>
+	</div>
+</div>
+<div class="container">
+	<div data-ng-show="!user" class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="btn-group-vertical btn-block">
+				<button data-sign-vk-btn class="btn btn-primary btn-lg vk">ВКонтакте</button>
+				<button data-sign-fb-btn class="btn btn-default btn-lg facebook">Facebook</button>
+			</div>
+		</div>
+	</div>
+	<div data-ng-show="user" class="row">
+		<div class="col-md-12">
+			<pre data-ng-bind="user | json"></pre>
+		</div>
+		<div class="col-md-12 text-center">
+			<button data-sign-out-btn class="btn btn-danger btn-lg">Выход</button>
+		</div>
+	</div>
+</div>

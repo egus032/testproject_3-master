@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<#if CRAWLER??>
+			<h2 class="text-danger">Вы просматриваете страницу как паук (web crawler)</h2>
+			</#if>
+			<h2>Привет, разработчик!</h2>
+			<p>Чтобы быстро избавиться от необязательных файлов и зависимостей стандартного проекта, необходимо выполнить следующие действия</p>
+			<ol style="list-style-type: decimal">
+				<li>Удалить папку /static/app/removeit</li>
+				<li>Удалить зависимость bootstrap из src/main/frontend/bower.json. Блок overrides можно оставить как есть</li>
+				<li>Удалить строку #7 (тема для bootstrap) из ftl/stylesheets.ftl</li>
+				<li>Очистить содержимое файла ftl/header.ftl</li>
+				<li>Очистить содержимое файла ftl/footer.ftl</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="col-md-12">
+		<h2>Рекомендации</h2>
+		<ul style="list-style-type: disc">
+			<li>Каждая страница должна иметь одноимённую папку в static/app/ и файл в этой папке название_страниц.html и название_страницы.js</li>
+			<li>Верстальщикам, которые сомневаются в каком контроллере писать JS код, следует работать в файле static/js/frontend.js</li>
+			<li>Для реализации попапов следует пользоваться уже написанными средствами (сервисами и директивами модуля /static/app/common/mg-popup/mg-popup.js). Стилизовать попап можно в /static/app/mg-popup/mg-popup.css. Пример использования попапов можно посмотреть <a data-ui-sref="removeitApiVk">здесь</a></li>
+		</ul>
+	</div>
+	<div class="col-md-12">
+		<h2>Особенности проекта</h2>
+		<ul style="list-style-type: square">
+			<li>Все .js файлы и .css файлы поключаются автоматически в ftl/javascripts.ftl и ftl/stylesheets.ftl соответственно</li>
+			<li>При сборке проекта в профиле production все .js файлы собираются и минифицируются в один static/production.js. А так же для него создается <a href="http://habrahabr.ru/post/148098/">source map</a></li>
+			<li>При сборке проекта в профиле production все .css файлы собираются в один static/css/production.css</li>
+			<li>При создании нового .js или .css файла следует пересобрать проект</li>
+			<li>Для сборки клиентской части проект используется <a href="http://gulpjs.com/" target="_blank">Gulp</a></li>
+			<li>Для подтягивания зависимостей клиентской части используется <a href="http://bower.io/" target="_blank">Bower</a></li>
+		</ul>
+	</div>
+</div>

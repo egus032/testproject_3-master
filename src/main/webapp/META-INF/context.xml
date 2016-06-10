@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="">
+  <Manager className="org.apache.catalina.session.PersistentManager" distributable="false" saveOnRestart="false"/>
+  <Loader delegate="true"/>
+  <ResourceLink global="${datasource}" name="${datasource}" type="javax.sql.DataSource"/>
+</Context>

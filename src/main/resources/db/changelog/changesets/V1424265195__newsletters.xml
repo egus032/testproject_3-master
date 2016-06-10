@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="V1424265195__newsletters" author="Constantine Tretyak">
+
+        <createTable tableName="newsletters">
+
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="text">
+            </column>
+
+            <column name="content" type="text">
+            </column>
+
+            <column name="amount" type="int" defaultValue="0">
+            </column>
+
+            <column name="status" type="int" defaultValue="0">
+            </column>
+
+            <column name="errors_count" type="int" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="start" type="timestamp">
+            </column>
+
+            <column name="finish" type="timestamp">
+            </column>
+            
+            <column name="own_list" type="boolean" defaultValueBoolean="true">
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

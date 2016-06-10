@@ -1,0 +1,35 @@
+{
+  "name": "mgApp",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reset-css": "~2.0.2011012602",
+    "jquery": "^1.x.x",
+    "jquery.inputmask": "~3.1.x",
+    "underscore": "^1.x.x",
+    "angular": "~1.4.x",
+    "angular-resource": "~1.4.x",
+    "angular-sanitize": "~1.4.x",
+    "angular-cookies": "~1.4.x",
+    "angular-touch": "~1.4.x",
+    "ui-router": "~0.2.x",
+    "blueimp-md5": "^1.x.x",
+    "swfobject": "*",
+    "bootstrap": "^3.x.x",
+    "cropper": "~2.1.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="password" value="(SELECT substring(md5(random()::text) from 1 for 10))" context="production" dbms="postgresql"/>
+    <property name="password" value="(SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 10))" context="production" dbms="mysql"/>
+    <property name="password" value="(SELECT 'qwerty')" context="development"/>
+
+    <includeAll path="classpath:db/changelog/changesets"/>
+
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+<div class="wrapper-outer">
+	<div class="wrapper-inner">
+		<div class="popup" id="{{id}}" data-ng-class="{'show':show}">
+			<a data-ng-click="close();" class="close" data-ng-class="{'hide':closeOnTop}"></a>
+			<div data-ng-transclude></div>
+		</div>
+	</div>
+	<a data-ng-click="close();" class="outer-close" data-ng-class="{'hide':!closeOnTop}"></a>
+</div>
+<div class="overlap"></div>
+
