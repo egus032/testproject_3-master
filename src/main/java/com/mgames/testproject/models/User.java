@@ -115,9 +115,11 @@ public class User implements JsonConvertible {
                         + ", lastName=" + lname 
                         + ", secondName=" + sname 
                         + ", socialId=" + socialId 
+                        + ", password=" + password
                         + ", phone=" + phone 
                         + ", repeatPhone=" + repeatPhone 
 			+ ", birthday=" + birthday 
+			+ ", sex=" + sex
                         + ", region=" + region
                         + ", city=" + city
                         + '}';
@@ -127,6 +129,8 @@ public class User implements JsonConvertible {
 		this.lname = userInfo.getLname();
 		this.fname = userInfo.getFname();
 		this.sname = userInfo.getSname();
+		this.phone = userInfo.getPhone();
+		this.repeatPhone = userInfo.getRepeatPhone();
 		this.birthday = userInfo.getBirthday() != null ? userInfo.getBirthday().toLocalDateTime() : null;
 		
 	}

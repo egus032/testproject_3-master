@@ -48,7 +48,7 @@ public class UsersDao {
 						  userInfo.getFname(),
 						  userInfo.getSname(),
                                                   userInfo.getEmail(),
-                                                  userInfo.getPhoto(),
+                                                  userInfo.getPhone(),
                                                   userInfo.getRepeatPhone(),
                                                   password,
 						  userInfo.getBirthday(),
@@ -56,7 +56,8 @@ public class UsersDao {
 						  userInfo.getRegion(),
 						  userInfo.getCity(),
 						  salt,
-                                                  userInfo.getPhone())
+                                                  userInfo.getPhoto()
+                                                  )
 				.stream().findFirst().orElse(null);
 	}
 

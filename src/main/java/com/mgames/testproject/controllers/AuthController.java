@@ -250,11 +250,14 @@ public class AuthController extends BaseController {
 			String bdateNew = sdf.format(d) + " 00:00:00.000000000";
 			Timestamp birthday = Timestamp.valueOf(bdateNew);
                         
+                        String sex = params.getString("sex").trim().toLowerCase();
+                        Integer sexInt = Integer.valueOf(sex);
+                        
                         String region = params.getString("region").trim().toLowerCase();
                         String city = params.getString("city").trim().toLowerCase();
 
 			UserInfo userInfo = UserInfo.UserInfoBuilder.email(fname, lname, sname, email,  phone,
-					   repeatPhone, password, birthday,
+					   repeatPhone, password, birthday, sexInt,
 					   region,
 					   city)
 					.build();

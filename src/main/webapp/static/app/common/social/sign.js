@@ -189,6 +189,7 @@
 						password: md5($scope.master.password),
 						autologin: $scope.master.autologin,
                                                 bdate: $scope.master.bdate,
+                                                sex: '1',
                                                 region: '1',
                                                 city: $scope.master.city
 					}, function (r) {

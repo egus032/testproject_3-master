@@ -65,15 +65,15 @@ public class UserInfo {
 		this.fname = firstName;
 		this.lname = lastName;
 		this.sname = secondName;
-		this.sex = sex;
-		this.photo = photo;
-		this.birthday = birthday;
-		this.email = email;
-		this.password = password;
-		this.region = region;
-		this.city = city;
+                this.email = email;
                 this.phone = phone;
                 this.repeatPhone = repeatPhone;
+                this.password = password;
+		this.birthday = birthday;
+                this.sex = sex;
+		this.region = region;
+		this.city = city;
+                this.photo = photo;
 	}
 
 	public Timestamp getBirthday() {
@@ -130,13 +130,15 @@ public class UserInfo {
 
 	public static class UserInfoBuilder {
 
-		public static UserInfoBuilder email(String lastName, String firstName,
+		public static UserInfoBuilder email(String lastName, 
+                                                    String firstName,
 						    String secondName,
 						    String email, 
 						    String phone, 
 						    String repeatPhone, 
                                                     String password,
 						    Timestamp birthday,
+						    int sex,
 						    String region,
 						    String city) {
 			UserInfoBuilder builder = new UserInfoBuilder();
@@ -149,6 +151,7 @@ public class UserInfo {
 			builder.repeatPhone = repeatPhone;
 			builder.password = password;
 			builder.birthday = birthday;
+			builder.sex = sex;
 			builder.region = region;
 			builder.city = city;
 			return builder;
